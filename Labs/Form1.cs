@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Labs.Lab2_BattleShip.Views;
 
 namespace Labs
 {
@@ -48,6 +49,12 @@ namespace Labs
         private void создатьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             textBox1.Clear();
+        }
+
+        private void доп2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MainForm mainForm = new MainForm();
+            mainForm.Show();
         }
     }
 }

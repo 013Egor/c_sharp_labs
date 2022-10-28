@@ -40,6 +40,8 @@ namespace Labs
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.допыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.доп2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +49,8 @@ namespace Labs
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.менюToolStripMenuItem,
-            this.лаюораторныеToolStripMenuItem});
+            this.лаюораторныеToolStripMenuItem,
+            this.допыToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -97,13 +100,13 @@ namespace Labs
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(93, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem2.Text = "№1";
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(93, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem3.Text = "№2";
             this.toolStripMenuItem3.Click += new System.EventHandler(this.toolStripMenuItem3_Click);
             // 
@@ -121,6 +124,21 @@ namespace Labs
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // допыToolStripMenuItem
+            // 
+            this.допыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.доп2ToolStripMenuItem});
+            this.допыToolStripMenuItem.Name = "допыToolStripMenuItem";
+            this.допыToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.допыToolStripMenuItem.Text = "Допы";
+            // 
+            // доп2ToolStripMenuItem
+            // 
+            this.доп2ToolStripMenuItem.Name = "доп2ToolStripMenuItem";
+            this.доп2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.доп2ToolStripMenuItem.Text = "Доп 2";
+            this.доп2ToolStripMenuItem.Click += new System.EventHandler(this.доп2ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -152,6 +170,8 @@ namespace Labs
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem допыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem доп2ToolStripMenuItem;
     }
 }
 

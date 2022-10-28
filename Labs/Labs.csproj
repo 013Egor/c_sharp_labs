@@ -52,6 +52,57 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Lab2_BattleShip\Controller\FieldExtensions.cs" />
+    <Compile Include="Lab2_BattleShip\Model\Direction.cs" />
+    <Compile Include="Lab2_BattleShip\Model\Extensions.cs" />
+    <Compile Include="Lab2_BattleShip\Model\Field.cs" />
+    <Compile Include="Lab2_BattleShip\Model\Game.cs" />
+    <Compile Include="Lab2_BattleShip\Model\GameOptions.cs" />
+    <Compile Include="Lab2_BattleShip\Model\GameStage.cs" />
+    <Compile Include="Lab2_BattleShip\Model\IField.cs" />
+    <Compile Include="Lab2_BattleShip\Model\IPlayer.cs" />
+    <Compile Include="Lab2_BattleShip\Model\IShip.cs" />
+    <Compile Include="Lab2_BattleShip\Model\Player.cs" />
+    <Compile Include="Lab2_BattleShip\Model\Point.cs" />
+    <Compile Include="Lab2_BattleShip\Model\Ship.cs" />
+    <Compile Include="Lab2_BattleShip\Model\ShotResult.cs" />
+    <Compile Include="Lab2_BattleShip\Views\ArrangingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lab2_BattleShip\Views\ArrangingControl.Designer.cs">
+      <DependentUpon>ArrangingControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lab2_BattleShip\Views\BattleControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lab2_BattleShip\Views\BattleControl.Designer.cs">
+      <DependentUpon>BattleControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lab2_BattleShip\Views\FieldControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lab2_BattleShip\Views\FieldControl.Designer.cs">
+      <DependentUpon>FieldControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lab2_BattleShip\Views\FinishedControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lab2_BattleShip\Views\FinishedControl.Designer.cs">
+      <DependentUpon>FinishedControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lab2_BattleShip\Views\GraphicsExtensions.cs" />
+    <Compile Include="Lab2_BattleShip\Views\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lab2_BattleShip\Views\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lab2_BattleShip\Views\StartControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Lab2_BattleShip\Views\StartControl.Designer.cs">
+      <DependentUpon>StartControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Lab_2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +113,24 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lab2_BattleShip\Views\ArrangingControl.resx">
+      <DependentUpon>ArrangingControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lab2_BattleShip\Views\BattleControl.resx">
+      <DependentUpon>BattleControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lab2_BattleShip\Views\FieldControl.resx">
+      <DependentUpon>FieldControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lab2_BattleShip\Views\FinishedControl.resx">
+      <DependentUpon>FinishedControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lab2_BattleShip\Views\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lab2_BattleShip\Views\StartControl.resx">
+      <DependentUpon>StartControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lab_2.resx">
       <DependentUpon>Lab_2.cs</DependentUpon>
@@ -89,8 +158,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SeaBattle\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
