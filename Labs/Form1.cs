@@ -56,5 +56,23 @@ namespace Labs
             MainForm mainForm = new MainForm();
             mainForm.Show();
         }
+
+        private void toolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            Lab_3 lab_3 = new Lab_3(this);
+            lab_3.Show();
+        }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            Lab3_1_2 lab_3_1_2 = new Lab3_1_2(this);
+            lab_3_1_2.Show();
+        }
+
+        private void toolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+            Lab3_2 lab_3_2 = new Lab3_2(this);
+            lab_3_2.Show();
+        }
     }
 }

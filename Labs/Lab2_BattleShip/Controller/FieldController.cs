@@ -7,7 +7,7 @@ using Labs.Lab2_BattleShip.Domain;
 
 namespace Labs.Lab2_BattleShip.AI
 {
-    public static class FieldExtensions
+    public static class FieldController
     {
         private static Random random = new Random();
 

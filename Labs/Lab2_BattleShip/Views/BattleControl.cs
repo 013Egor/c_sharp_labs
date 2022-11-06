@@ -48,10 +48,5 @@ namespace Labs.Lab2_BattleShip.Views
                 game.ShootTo(shot);
             }
         }
-
-        private void tableLayoutPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
