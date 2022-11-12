@@ -74,5 +74,11 @@ namespace Labs
             Lab3_2 lab_3_2 = new Lab3_2(this);
             lab_3_2.Show();
         }
+
+        private void familyTreeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Lab3_tree lab3_tree = new Lab3_tree(this);
+            lab3_tree.Show();
+        }
     }
 }

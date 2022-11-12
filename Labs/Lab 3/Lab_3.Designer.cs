@@ -47,6 +47,9 @@ namespace Labs
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -93,10 +96,10 @@ namespace Labs
             this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(1381, 42);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
+            this.radioButton1.Size = new System.Drawing.Size(76, 17);
             this.radioButton1.TabIndex = 4;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.Text = "Карандаш";
             this.radioButton1.UseVisualStyleBackColor = true;
             this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
             // 
@@ -105,9 +108,9 @@ namespace Labs
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(1381, 65);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
+            this.radioButton2.Size = new System.Drawing.Size(64, 17);
             this.radioButton2.TabIndex = 5;
-            this.radioButton2.Text = "radioButton2";
+            this.radioButton2.Text = "Маркер";
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
             // 
@@ -116,9 +119,9 @@ namespace Labs
             this.radioButton3.AutoSize = true;
             this.radioButton3.Location = new System.Drawing.Point(1381, 88);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(85, 17);
+            this.radioButton3.Size = new System.Drawing.Size(55, 17);
             this.radioButton3.TabIndex = 6;
-            this.radioButton3.Text = "radioButton3";
+            this.radioButton3.Text = "Кисть";
             this.radioButton3.UseVisualStyleBackColor = true;
             this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
@@ -183,7 +186,6 @@ namespace Labs
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 40);
             this.label1.TabIndex = 13;
-            this.label1.Text = "label1";
             this.label1.BackColorChanged += new System.EventHandler(this.label1_BackColorChanged);
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
@@ -191,27 +193,66 @@ namespace Labs
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(12, 42);
+            this.panel1.Location = new System.Drawing.Point(12, 41);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1324, 707);
+            this.panel1.Size = new System.Drawing.Size(1363, 708);
             this.panel1.TabIndex = 14;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(-1, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1324, 706);
+            this.pictureBox1.Size = new System.Drawing.Size(1363, 707);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(1381, 304);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(99, 17);
+            this.radioButton4.TabIndex = 15;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Пилообразная";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(1381, 328);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(105, 17);
+            this.radioButton5.TabIndex = 16;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "Прямоугольная";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            this.radioButton5.CheckedChanged += new System.EventHandler(this.radioButton5_CheckedChanged);
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(1381, 352);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(90, 17);
+            this.radioButton6.TabIndex = 17;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "Треугольная";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            this.radioButton6.CheckedChanged += new System.EventHandler(this.radioButton6_CheckedChanged);
+            // 
             // Lab_3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1584, 761);
+            this.Controls.Add(this.radioButton6);
+            this.Controls.Add(this.radioButton5);
+            this.Controls.Add(this.radioButton4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button5);
@@ -261,5 +302,8 @@ namespace Labs
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton radioButton6;
     }
 }

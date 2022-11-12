@@ -144,29 +144,84 @@ namespace Labs
             g.DrawLine(pen, pictureBox1.Width / 2, 0, pictureBox1.Width / 2, pictureBox1.Height);
             pen.Width = Convert.ToInt32(numericUpDown1.Value);
             pen.Color = Color.Red;
+
+
             int Interval = pictureBox1.Width;
 
             double yp = 0, yy1 = 0, yy2 = 0;
             int angle = 0;
             int xtemp = 0;
             int ytemp = pictureBox1.Height / 2;
+            int flag = 0;
+            if (radioButton4.Checked)
+                flag = 0;
+            else if (radioButton5.Checked)
+                flag = 1;
+            else if (radioButton6.Checked)
+                flag = 2;
 
-            for (int i = 0; i < Interval; i++)
+            if (flag == 0)
             {
-                for (int j = 1; j < nterms; j++)
+                for (int i = 0; i < Interval; i++)
                 {
-                    yy1 = A / ((2 * j) - 1);
-                    double arg = ((j * 2) - 1) * F * 0.01397 * angle;
-                    yy2 = Math.Sin(arg);
-                    yp = yp + yy1 * yy2;
-                }
-                g.DrawLine(pen, xtemp, ytemp, i, pictureBox1.Height / 2 + (int)Math.Truncate(yp));
-                xtemp = i;
-                ytemp = pictureBox1.Height / 2 + (int)Math.Truncate(yp);
+                    for (int j = 1; j < nterms; j++)
+                    {
+                        yy1 = A / ((2 * j));
+                        double arg = ((j * 2)) * F * 0.01397 * angle;
+                        yy2 = Math.Sin(arg);
+                        yp = yp + yy1 * yy2;
+                    }
+                    g.DrawLine(pen, xtemp, ytemp, i, pictureBox1.Height / 2 + (int)Math.Truncate(yp));
+                    xtemp = i;
+                    ytemp = pictureBox1.Height / 2 + (int)Math.Truncate(yp);
 
-                yp = 0;
-                angle = angle + 1;
-            };
+                    yp = 0;
+                    angle = angle + 1;
+                }
+            }
+            else if (flag == 1)
+            {
+                for (int i = 0; i < Interval; i++)
+                {
+                    for (int j = 1; j < nterms; j++)
+                    {
+                        yy1 = A / ((2 * j - 1));
+                        double arg = ((j * 2 - 1)) * F * 0.01397 * angle;
+                        yy2 = Math.Sin(arg);
+                        yp = yp + yy1 * yy2;
+                    }
+                    g.DrawLine(pen, xtemp, ytemp, i, pictureBox1.Height / 2 + (int)Math.Truncate(yp));
+                    xtemp = i;
+                    ytemp = pictureBox1.Height / 2 + (int)Math.Truncate(yp);
+
+                    yp = 0;
+                    angle = angle + 1;
+                }
+            }
+            else if (flag == 2)
+            {
+                for (int i = 0; i < Interval; i++)
+                {
+                    for (int j = 1; j < nterms; j++)
+                    {
+                        int sign = 0;
+                        yy1 = A / ((2 * j - 1) * (2 * j - 1));
+                        if ((j - 1) % 2 == 0) sign = 1;
+                        else sign = -1;
+                        double arg = ((j * 2 - 1)) * F * 0.01397 * angle;
+                        yy2 = Math.Sin(arg);
+                        yp = yp + sign * yy1 * yy2;
+                    }
+                    g.DrawLine(pen, xtemp, ytemp, i, pictureBox1.Height / 2 + (int)Math.Truncate(yp));
+                    xtemp = i;
+                    ytemp = pictureBox1.Height / 2 + (int)Math.Truncate(yp);
+
+                    yp = 0;
+                    angle = angle + 1;
+                }
+            }
+
+
             pen.Color = Color.Black;
             g.Dispose();
             pictureBox1.Invalidate();
@@ -262,6 +317,7 @@ namespace Labs
         private void button4_Click_1(object sender, EventArgs e)
         {
             redrawFourier();
+            radioButton4.Checked = true;
         }
 
         private void numericUpDown2_ValueChanged_1(object sender, EventArgs e)
@@ -290,6 +346,21 @@ namespace Labs
             {
                 lb.BackColor = colorDialog1.Color;
             }
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            redrawFourier();
+        }
+
+        private void radioButton5_CheckedChanged(object sender, EventArgs e)
+        {
+            redrawFourier();
+        }
+
+        private void radioButton6_CheckedChanged(object sender, EventArgs e)
+        {
+            redrawFourier();
         }
     }
 }

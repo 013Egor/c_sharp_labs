@@ -39,12 +39,13 @@ namespace Labs
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.допыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.доп2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.familyTreeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,7 +99,8 @@ namespace Labs
             this.toolStripMenuItem3,
             this.toolStripMenuItem4,
             this.toolStripMenuItem5,
-            this.toolStripMenuItem6});
+            this.toolStripMenuItem6,
+            this.familyTreeToolStripMenuItem});
             this.лаюораторныеToolStripMenuItem.Name = "лаюораторныеToolStripMenuItem";
             this.лаюораторныеToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.лаюораторныеToolStripMenuItem.Text = "Лабораторные";
@@ -130,6 +132,13 @@ namespace Labs
             this.toolStripMenuItem5.Text = "№3.2";
             this.toolStripMenuItem5.Click += new System.EventHandler(this.toolStripMenuItem5_Click);
             // 
+            // toolStripMenuItem6
+            // 
+            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
+            this.toolStripMenuItem6.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem6.Text = "№3.3";
+            this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
+            // 
             // допыToolStripMenuItem
             // 
             this.допыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -160,12 +169,12 @@ namespace Labs
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // toolStripMenuItem6
+            // familyTreeToolStripMenuItem
             // 
-            this.toolStripMenuItem6.Name = "toolStripMenuItem6";
-            this.toolStripMenuItem6.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem6.Text = "№3.3";
-            this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
+            this.familyTreeToolStripMenuItem.Name = "familyTreeToolStripMenuItem";
+            this.familyTreeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.familyTreeToolStripMenuItem.Text = "№3-FamilyTree";
+            this.familyTreeToolStripMenuItem.Click += new System.EventHandler(this.familyTreeToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -202,6 +211,7 @@ namespace Labs
         public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
+        private System.Windows.Forms.ToolStripMenuItem familyTreeToolStripMenuItem;
     }
 }
 

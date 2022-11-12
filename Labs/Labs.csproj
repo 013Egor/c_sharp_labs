@@ -52,10 +52,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lab3_1_2.cs">
+    <Compile Include="Lab 3\Lab3_1_2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Lab3_1_2.Designer.cs">
+    <Compile Include="Lab 3\Lab3_1_2.Designer.cs">
       <DependentUpon>Lab3_1_2.cs</DependentUpon>
     </Compile>
     <Compile Include="Lab2_BattleShip\Controller\FieldController.cs" />
@@ -109,11 +109,17 @@
     <Compile Include="Lab2_BattleShip\Views\StartControl.Designer.cs">
       <DependentUpon>StartControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lab3_2.cs">
+    <Compile Include="Lab 3\Lab3_2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Lab3_2.Designer.cs">
+    <Compile Include="Lab 3\Lab3_2.Designer.cs">
       <DependentUpon>Lab3_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lab 3\Lab3_tree.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lab 3\Lab3_tree.Designer.cs">
+      <DependentUpon>Lab3_tree.cs</DependentUpon>
     </Compile>
     <Compile Include="Lab_2.cs">
       <SubType>Form</SubType>
@@ -121,10 +127,10 @@
     <Compile Include="Lab_2.Designer.cs">
       <DependentUpon>Lab_2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lab_3.cs">
+    <Compile Include="Lab 3\Lab_3.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Lab_3.Designer.cs">
+    <Compile Include="Lab 3\Lab_3.Designer.cs">
       <DependentUpon>Lab_3.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -132,7 +138,7 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Lab3_1_2.resx">
+    <EmbeddedResource Include="Lab 3\Lab3_1_2.resx">
       <DependentUpon>Lab3_1_2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lab2_BattleShip\Views\ArrangingControl.resx">
@@ -153,13 +159,16 @@
     <EmbeddedResource Include="Lab2_BattleShip\Views\StartControl.resx">
       <DependentUpon>StartControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Lab3_2.resx">
+    <EmbeddedResource Include="Lab 3\Lab3_2.resx">
       <DependentUpon>Lab3_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lab 3\Lab3_tree.resx">
+      <DependentUpon>Lab3_tree.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lab_2.resx">
       <DependentUpon>Lab_2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Lab_3.resx">
+    <EmbeddedResource Include="Lab 3\Lab_3.resx">
       <DependentUpon>Lab_3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
