@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Labs.Lab2_BattleShip.Views;
+using Labs.Lab_4;
 
 namespace Labs
 {
@@ -79,6 +80,12 @@ namespace Labs
         {
             Lab3_tree lab3_tree = new Lab3_tree(this);
             lab3_tree.Show();
+        }
+
+        private void toolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+            Lab4 lab4 = new Lab4(this);
+            lab4.Show();
         }
     }
 }
