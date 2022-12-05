@@ -17,6 +17,8 @@ namespace Labs.Lab2_BattleShip.Domain
         bool HasAliveShips();
         bool IsAlive(IShip ship);
         bool PutShip(IShip ship, Point point);
+        Ship getCurrentShip();
+        List<Point> getAvailableShots(Ship ship);
 
         event Action Updated;
     }

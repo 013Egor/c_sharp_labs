@@ -9,11 +9,25 @@ namespace Labs.Lab2_BattleShip.Domain
         private readonly HashSet<Ship> ships = new HashSet<Ship>();
         private readonly HashSet<Point> shots = new HashSet<Point>();
 
+        public List<Ship> savedShips = new List<Ship>();
+        public List<Point> savedShots = new List<Point>();
+
+        public Ship currentShip = null;
         public Field(int width, int height)
         {
             Width = width;
             Height = height;
         }
+
+        public Field(int width, int height, List<Ship> ships, List<Point> shots)
+        {
+            this.ships = ships.ToHashSet();
+            this.shots = shots.ToHashSet();
+            Width = width;
+            Height = height;
+        }
+
+        public Field() { }
 
         public event Action Updated;
 
@@ -147,18 +161,18 @@ namespace Labs.Lab2_BattleShip.Domain
 
             shots.Add(point);
 
-            var ship = GetShipsAt(point).FirstOrDefault();
-            if (ship == null)
+            currentShip = (Ship) GetShipsAt(point).FirstOrDefault();
+            if (currentShip == null)
             {
                 Updated?.Invoke();
                 return ShotResult.Miss;
             }
-
-            var willBlow = ship.GetPositionPoints()
+            
+            var willBlow = currentShip.GetPositionPoints()
                 .All(p => shots.Contains(p));
 
             if (willBlow)
-                shots.UnionWith(GetShipRoundPoints(ship));
+                shots.UnionWith(GetShipRoundPoints(currentShip));
 
             Updated?.Invoke();
             return ShotResult.Hit;
@@ -189,6 +203,38 @@ namespace Labs.Lab2_BattleShip.Domain
         public bool HasAliveShips()
         {
             return ships.Any(ship => IsAlive(ship));
+        }
+
+        public List<Point> GetShotsList()
+        {
+            this.savedShots = new List<Point>();
+            foreach (Point shot in this.shots)
+            {
+                this.savedShots.Add(shot);
+            }
+
+            return this.savedShots;
+        }
+
+        public List<Ship> GetShipsList()
+        {
+            this.savedShips = new List<Ship>();
+            foreach (Ship ship in this.ships)
+            {
+                this.savedShips.Add(ship);
+            }
+
+            return this.savedShips;
+        }
+
+        public Ship getCurrentShip()
+        {
+            return currentShip;
+        }
+
+        public List<Point> getAvailableShots(Ship ship)
+        {
+            return (List<Point>) ship.GetPositionPoints();
         }
     }
 }

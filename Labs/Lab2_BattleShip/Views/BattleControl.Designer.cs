@@ -26,6 +26,8 @@ namespace Labs.Lab2_BattleShip.Views
             this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.humanFieldControl = new Labs.Lab2_BattleShip.Views.FieldControl();
             this.aiFieldControl = new Labs.Lab2_BattleShip.Views.FieldControl();
+            this.button1 = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,6 +41,7 @@ namespace Labs.Lab2_BattleShip.Views
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 200F));
             this.tableLayoutPanel.Controls.Add(this.humanFieldControl, 1, 0);
             this.tableLayoutPanel.Controls.Add(this.aiFieldControl, 0, 1);
+            this.tableLayoutPanel.Controls.Add(this.button1, 0, 0);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
@@ -55,7 +58,7 @@ namespace Labs.Lab2_BattleShip.Views
             // 
             this.humanFieldControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.humanFieldControl.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.humanFieldControl.Location = new System.Drawing.Point(5, 5);
+            this.humanFieldControl.Location = new System.Drawing.Point(605, 5);
             this.humanFieldControl.Margin = new System.Windows.Forms.Padding(5);
             this.humanFieldControl.Name = "humanFieldControl";
             this.humanFieldControl.Size = new System.Drawing.Size(190, 190);
@@ -65,11 +68,23 @@ namespace Labs.Lab2_BattleShip.Views
             // 
             this.aiFieldControl.BackColor = System.Drawing.SystemColors.ControlDark;
             this.aiFieldControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.aiFieldControl.Location = new System.Drawing.Point(205, 205);
+            this.aiFieldControl.Location = new System.Drawing.Point(5, 205);
             this.aiFieldControl.Margin = new System.Windows.Forms.Padding(5);
             this.aiFieldControl.Name = "aiFieldControl";
             this.aiFieldControl.Size = new System.Drawing.Size(390, 390);
             this.aiFieldControl.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Magenta;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(392, 76);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Сохранить игру\r\n";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // BattleControl
             // 
@@ -88,5 +103,7 @@ namespace Labs.Lab2_BattleShip.Views
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
         private FieldControl humanFieldControl;
         private FieldControl aiFieldControl;
+        private System.Windows.Forms.Button button1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

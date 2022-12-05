@@ -6,6 +6,10 @@ namespace Labs.Lab2_BattleShip.Domain
     {
         private int[] sizes = new[] { 1, 1, 1, 1, 2, 2, 2, 3, 3, 4 };
 
+        public GameOptions()
+        {
+        }
+
         public int Width { get; set; } = 10;
         public int Height { get; set; } = 10;
 

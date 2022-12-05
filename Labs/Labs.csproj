@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -69,15 +72,20 @@
     <Compile Include="Lab2_BattleShip\Model\Direction.cs" />
     <Compile Include="Lab2_BattleShip\Model\Extensions.cs" />
     <Compile Include="Lab2_BattleShip\Model\Field.cs" />
+    <Compile Include="Lab2_BattleShip\Model\FieldDTO.cs" />
     <Compile Include="Lab2_BattleShip\Model\Game.cs" />
+    <Compile Include="Lab2_BattleShip\Model\GameDTO.cs" />
     <Compile Include="Lab2_BattleShip\Model\GameOptions.cs" />
     <Compile Include="Lab2_BattleShip\Model\GameStage.cs" />
     <Compile Include="Lab2_BattleShip\Model\IField.cs" />
     <Compile Include="Lab2_BattleShip\Model\IPlayer.cs" />
     <Compile Include="Lab2_BattleShip\Model\IShip.cs" />
     <Compile Include="Lab2_BattleShip\Model\Player.cs" />
+    <Compile Include="Lab2_BattleShip\Model\PlayerDTO.cs" />
     <Compile Include="Lab2_BattleShip\Model\Point.cs" />
+    <Compile Include="Lab2_BattleShip\Model\PointDTO.cs" />
     <Compile Include="Lab2_BattleShip\Model\Ship.cs" />
+    <Compile Include="Lab2_BattleShip\Model\ShipDTO.cs" />
     <Compile Include="Lab2_BattleShip\Model\ShotResult.cs" />
     <Compile Include="Lab2_BattleShip\Views\ArrangingControl.cs">
       <SubType>UserControl</SubType>
@@ -190,6 +198,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\Lab_2.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

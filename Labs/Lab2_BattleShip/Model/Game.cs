@@ -6,15 +6,25 @@ namespace Labs.Lab2_BattleShip.Domain
 {
     public class Game
     {
-        private GameStage stage = GameStage.NotStarted;
-        private Player firstPlayer = null;
-        private Player secondPlayer = null;
-        private bool isFirstPlayerCurrent = false;
-        private GameOptions options = new GameOptions();
-
+        public GameStage stage = GameStage.NotStarted;
+        public Player firstPlayer = null;
+        public Player secondPlayer = null;
+        public bool isFirstPlayerCurrent = false;
+        public GameOptions options = new GameOptions();
+        public bool level { set; get; }
         public Game(Action<GameOptions> configureOptions = null)
         {
             configureOptions?.Invoke(options);
+        }
+
+        public Game(GameStage stage, Player firstPlayer, Player secondPlayer, bool isFirstPlayerCurrent, GameOptions options, bool level)
+        {
+            this.level = level;
+            this.stage = stage;
+            this.firstPlayer = firstPlayer;
+            this.secondPlayer = secondPlayer;
+            this.isFirstPlayerCurrent = isFirstPlayerCurrent;
+            this.options = options;
         }
 
         public GameStage Stage => stage;
@@ -34,6 +44,17 @@ namespace Labs.Lab2_BattleShip.Domain
             isFirstPlayerCurrent = true;
             CurrentPlayerChanged?.Invoke(CurrentPlayer);
             ChangeStage(GameStage.ArrangingShips);
+        }
+
+        public void Continue(Game game)
+        {
+            firstPlayer = game.firstPlayer;
+            secondPlayer = game.secondPlayer;
+            isFirstPlayerCurrent = game.isFirstPlayerCurrent;
+
+            isFirstPlayerCurrent = true;
+            CurrentPlayerChanged?.Invoke(CurrentPlayer);
+            ChangeStage(GameStage.Battle);
         }
 
         public bool CanEndArrangingCurrentPlayerShips =>
@@ -97,7 +118,7 @@ namespace Labs.Lab2_BattleShip.Domain
             StageChanged?.Invoke(stage);
         }
 
-        private Player GetNextPlayer() => isFirstPlayerCurrent ? secondPlayer : firstPlayer;
+        public Player GetNextPlayer() => isFirstPlayerCurrent ? secondPlayer : firstPlayer;
 
         private void MoveToNextPlayer()
         {

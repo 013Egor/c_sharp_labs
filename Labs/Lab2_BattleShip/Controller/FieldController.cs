@@ -37,6 +37,43 @@ namespace Labs.Lab2_BattleShip.AI
             return new Point(0, 0);
         }
 
+        public static Point GenerateShot(this IField field)
+        {
+            var shots = field.GetShots();
+            var ship = field.getCurrentShip();
+
+            if (ship != null)
+            {
+                List<Point> availableShots = field.getAvailableShots(ship);
+                foreach(Point point in availableShots)
+                {
+                    if (!shots.Contains(point))
+                    {
+                        return point;
+                    }
+                }
+            }
+            for (var i = 0; i < 1000; i++)
+            {
+                var x = random.Next(0, field.Width);
+                var y = random.Next(0, field.Height);
+                var point = new Point(x, y);
+                if (!shots.Contains(point))
+                    return point;
+            }
+
+            for (var x = 0; x < field.Width; x++)
+            {
+                for (var y = 0; y < field.Height; y++)
+                {
+                    var point = new Point(x, y);
+                    if (!shots.Contains(point))
+                        return point;
+                }
+            }
+            return new Point(0, 0);
+        }
+
         public static bool ArrangeShipsAutomatically(this IField field)
         {
             for (var i = 0; i < 1000; i++)

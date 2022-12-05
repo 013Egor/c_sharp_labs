@@ -1,7 +1,10 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using Labs.Lab2_BattleShip.AI;
 using Labs.Lab2_BattleShip.Domain;
+using Labs.Lab2_BattleShip.Model;
+using Newtonsoft.Json;
 
 namespace Labs.Lab2_BattleShip.Views
 {
@@ -44,9 +47,31 @@ namespace Labs.Lab2_BattleShip.Views
             var aiPlayer = game.SecondPlayer;
             if (game.Stage == GameStage.Battle && game.CurrentPlayer.Equals(aiPlayer))
             {
-                var shot = humanPlayer.Field.GenerateRandomShot();
+                Console.WriteLine(game.level);
+                Point shot;
+                if (game.level)
+                {
+                    shot = humanPlayer.Field.GenerateShot();
+                    Console.WriteLine(shot.X + " " + shot.Y);
+                }
+                else
+                {
+                    shot = humanPlayer.Field.GenerateRandomShot();
+                    Console.WriteLine(shot.X + " " + shot.Y);
+                }
+
                 game.ShootTo(shot);
             }
+        }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            game.firstPlayer.Field.GetShipsList();
+            game.firstPlayer.Field.GetShotsList();
+            game.secondPlayer.Field.GetShotsList();
+            game.secondPlayer.Field.GetShipsList();
+            string jsonString = JsonConvert.SerializeObject(new GameDTO(game));
+            System.IO.File.WriteAllText("savedGame.txt", jsonString);
         }
     }
 }
