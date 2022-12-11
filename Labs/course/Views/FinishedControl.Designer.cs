@@ -29,6 +29,7 @@ namespace Labs.Lab2_BattleShip.Views
             this.aiFieldControl = new Labs.Lab2_BattleShip.Views.FieldControl();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,6 +46,7 @@ namespace Labs.Lab2_BattleShip.Views
             this.tableLayoutPanel.Controls.Add(this.aiFieldControl, 2, 1);
             this.tableLayoutPanel.Controls.Add(this.label1, 0, 0);
             this.tableLayoutPanel.Controls.Add(this.label2, 2, 0);
+            this.tableLayoutPanel.Controls.Add(this.button1, 1, 2);
             this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
@@ -112,6 +114,19 @@ namespace Labs.Lab2_BattleShip.Views
             this.label2.Text = "ПК";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.Font = new System.Drawing.Font("Showcard Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(308, 478);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(184, 43);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Новая игра";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FinishedControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -133,5 +148,6 @@ namespace Labs.Lab2_BattleShip.Views
         private FieldControl aiFieldControl;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button1;
     }
 }

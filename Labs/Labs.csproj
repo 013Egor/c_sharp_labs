@@ -49,6 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="course\Views\DifficultySelection.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="course\Views\DifficultySelection.Designer.cs">
+      <DependentUpon>DifficultySelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="dop_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dop_2.Designer.cs">
+      <DependentUpon>dop_2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,60 +80,60 @@
     <Compile Include="Lab 4\Lab4.Designer.cs">
       <DependentUpon>Lab4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lab2_BattleShip\Controller\FieldController.cs" />
-    <Compile Include="Lab2_BattleShip\Model\Direction.cs" />
-    <Compile Include="Lab2_BattleShip\Model\Extensions.cs" />
-    <Compile Include="Lab2_BattleShip\Model\Field.cs" />
-    <Compile Include="Lab2_BattleShip\Model\FieldDTO.cs" />
-    <Compile Include="Lab2_BattleShip\Model\Game.cs" />
-    <Compile Include="Lab2_BattleShip\Model\GameDTO.cs" />
-    <Compile Include="Lab2_BattleShip\Model\GameOptions.cs" />
-    <Compile Include="Lab2_BattleShip\Model\GameStage.cs" />
-    <Compile Include="Lab2_BattleShip\Model\IField.cs" />
-    <Compile Include="Lab2_BattleShip\Model\IPlayer.cs" />
-    <Compile Include="Lab2_BattleShip\Model\IShip.cs" />
-    <Compile Include="Lab2_BattleShip\Model\Player.cs" />
-    <Compile Include="Lab2_BattleShip\Model\PlayerDTO.cs" />
-    <Compile Include="Lab2_BattleShip\Model\Point.cs" />
-    <Compile Include="Lab2_BattleShip\Model\PointDTO.cs" />
-    <Compile Include="Lab2_BattleShip\Model\Ship.cs" />
-    <Compile Include="Lab2_BattleShip\Model\ShipDTO.cs" />
-    <Compile Include="Lab2_BattleShip\Model\ShotResult.cs" />
-    <Compile Include="Lab2_BattleShip\Views\ArrangingControl.cs">
+    <Compile Include="course\Controller\FieldController.cs" />
+    <Compile Include="course\Model\Direction.cs" />
+    <Compile Include="course\Model\Extensions.cs" />
+    <Compile Include="course\Model\Field.cs" />
+    <Compile Include="course\Model\FieldDTO.cs" />
+    <Compile Include="course\Model\Game.cs" />
+    <Compile Include="course\Model\GameDTO.cs" />
+    <Compile Include="course\Model\GameOptions.cs" />
+    <Compile Include="course\Model\GameStage.cs" />
+    <Compile Include="course\Model\IField.cs" />
+    <Compile Include="course\Model\IPlayer.cs" />
+    <Compile Include="course\Model\IShip.cs" />
+    <Compile Include="course\Model\Player.cs" />
+    <Compile Include="course\Model\PlayerDTO.cs" />
+    <Compile Include="course\Model\Point.cs" />
+    <Compile Include="course\Model\PointDTO.cs" />
+    <Compile Include="course\Model\Ship.cs" />
+    <Compile Include="course\Model\ShipDTO.cs" />
+    <Compile Include="course\Model\ShotResult.cs" />
+    <Compile Include="course\Views\ArrangingControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Lab2_BattleShip\Views\ArrangingControl.Designer.cs">
+    <Compile Include="course\Views\ArrangingControl.Designer.cs">
       <DependentUpon>ArrangingControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lab2_BattleShip\Views\BattleControl.cs">
+    <Compile Include="course\Views\BattleControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Lab2_BattleShip\Views\BattleControl.Designer.cs">
+    <Compile Include="course\Views\BattleControl.Designer.cs">
       <DependentUpon>BattleControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lab2_BattleShip\Views\FieldControl.cs">
+    <Compile Include="course\Views\FieldControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Lab2_BattleShip\Views\FieldControl.Designer.cs">
+    <Compile Include="course\Views\FieldControl.Designer.cs">
       <DependentUpon>FieldControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lab2_BattleShip\Views\FinishedControl.cs">
+    <Compile Include="course\Views\FinishedControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Lab2_BattleShip\Views\FinishedControl.Designer.cs">
+    <Compile Include="course\Views\FinishedControl.Designer.cs">
       <DependentUpon>FinishedControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lab2_BattleShip\Views\GraphicsExtensions.cs" />
-    <Compile Include="Lab2_BattleShip\Views\MainForm.cs">
+    <Compile Include="course\Views\GraphicsExtensions.cs" />
+    <Compile Include="course\Views\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Lab2_BattleShip\Views\MainForm.Designer.cs">
+    <Compile Include="course\Views\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lab2_BattleShip\Views\StartControl.cs">
+    <Compile Include="course\Views\StartControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Lab2_BattleShip\Views\StartControl.Designer.cs">
+    <Compile Include="course\Views\StartControl.Designer.cs">
       <DependentUpon>StartControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Lab 3\Lab3_2.cs">
@@ -150,6 +162,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="course\Views\DifficultySelection.resx">
+      <DependentUpon>DifficultySelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dop_2.resx">
+      <DependentUpon>dop_2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,22 +177,22 @@
     <EmbeddedResource Include="Lab 4\Lab4.resx">
       <DependentUpon>Lab4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Lab2_BattleShip\Views\ArrangingControl.resx">
+    <EmbeddedResource Include="course\Views\ArrangingControl.resx">
       <DependentUpon>ArrangingControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Lab2_BattleShip\Views\BattleControl.resx">
+    <EmbeddedResource Include="course\Views\BattleControl.resx">
       <DependentUpon>BattleControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Lab2_BattleShip\Views\FieldControl.resx">
+    <EmbeddedResource Include="course\Views\FieldControl.resx">
       <DependentUpon>FieldControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Lab2_BattleShip\Views\FinishedControl.resx">
+    <EmbeddedResource Include="course\Views\FinishedControl.resx">
       <DependentUpon>FinishedControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Lab2_BattleShip\Views\MainForm.resx">
+    <EmbeddedResource Include="course\Views\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Lab2_BattleShip\Views\StartControl.resx">
+    <EmbeddedResource Include="course\Views\StartControl.resx">
       <DependentUpon>StartControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Lab 3\Lab3_2.resx">

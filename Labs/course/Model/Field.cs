@@ -13,6 +13,19 @@ namespace Labs.Lab2_BattleShip.Domain
         public List<Point> savedShots = new List<Point>();
 
         public Ship currentShip = null;
+
+        public void clearField()
+        {
+            foreach (Ship ship in ships)
+            {
+                ship.Direction = Direction.Horizontal;
+                ship.Position = null;
+            }
+            this.shots.Clear();
+            this.savedShips.Clear();
+            this.savedShots.Clear();
+            this.currentShip = null;
+        }
         public Field(int width, int height)
         {
             Width = width;
@@ -47,9 +60,8 @@ namespace Labs.Lab2_BattleShip.Domain
 
         public IShip GetShipToPutOrNull()
         {
-            return ships
-                .Where(ship => !ship.Position.HasValue)
-                .OrderByDescending(ship => ship.Size)
+            IEnumerable<Ship> t = ships.Where(ship => !ship.Position.HasValue);
+            return t.OrderByDescending(ship => ship.Size)
                 .FirstOrDefault();
         }
 

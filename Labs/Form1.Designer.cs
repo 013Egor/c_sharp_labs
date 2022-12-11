@@ -40,13 +40,13 @@ namespace Labs
             this.toolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
-            this.familyTreeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
             this.допыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.доп2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.toolStripMenuItem7 = new System.Windows.Forms.ToolStripMenuItem();
+            this.доп2ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,10 +98,10 @@ namespace Labs
             this.лаюораторныеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem2,
             this.toolStripMenuItem3,
+            this.доп2ToolStripMenuItem1,
             this.toolStripMenuItem4,
             this.toolStripMenuItem5,
             this.toolStripMenuItem6,
-            this.familyTreeToolStripMenuItem,
             this.toolStripMenuItem7});
             this.лаюораторныеToolStripMenuItem.Name = "лаюораторныеToolStripMenuItem";
             this.лаюораторныеToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
@@ -141,12 +141,12 @@ namespace Labs
             this.toolStripMenuItem6.Text = "№3.3";
             this.toolStripMenuItem6.Click += new System.EventHandler(this.toolStripMenuItem6_Click);
             // 
-            // familyTreeToolStripMenuItem
+            // toolStripMenuItem7
             // 
-            this.familyTreeToolStripMenuItem.Name = "familyTreeToolStripMenuItem";
-            this.familyTreeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.familyTreeToolStripMenuItem.Text = "№3-FamilyTree";
-            this.familyTreeToolStripMenuItem.Click += new System.EventHandler(this.familyTreeToolStripMenuItem_Click);
+            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
+            this.toolStripMenuItem7.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem7.Text = "№4";
+            this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
             // 
             // допыToolStripMenuItem
             // 
@@ -178,12 +178,12 @@ namespace Labs
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // toolStripMenuItem7
+            // доп2ToolStripMenuItem1
             // 
-            this.toolStripMenuItem7.Name = "toolStripMenuItem7";
-            this.toolStripMenuItem7.Size = new System.Drawing.Size(180, 22);
-            this.toolStripMenuItem7.Text = "№4";
-            this.toolStripMenuItem7.Click += new System.EventHandler(this.toolStripMenuItem7_Click);
+            this.доп2ToolStripMenuItem1.Name = "доп2ToolStripMenuItem1";
+            this.доп2ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.доп2ToolStripMenuItem1.Text = "доп 2";
+            this.доп2ToolStripMenuItem1.Click += new System.EventHandler(this.доп2ToolStripMenuItem1_Click);
             // 
             // Form1
             // 
@@ -220,8 +220,8 @@ namespace Labs
         public System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem5;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem6;
-        private System.Windows.Forms.ToolStripMenuItem familyTreeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem7;
+        private System.Windows.Forms.ToolStripMenuItem доп2ToolStripMenuItem1;
     }
 }
 

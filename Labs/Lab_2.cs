@@ -14,8 +14,10 @@ namespace Labs
 {
     public partial class Lab_2 : Form
     {
-        public Lab_2()
+        Form1 home;
+        public Lab_2(Form1 home)
         {
+            this.home = home;
             InitializeComponent();
             radioButton2.Checked = true;
             numericUpDown1.Minimum = 1;
@@ -157,6 +159,7 @@ namespace Labs
                     {
                         System.IO.File.AppendAllText("Errors_Lab_2.txt", "\n### " + DateTime.Now.ToUniversalTime());
                         System.IO.File.AppendAllText("Errors_Lab_2.txt", "\n" + exc.StackTrace);
+                        home.textBox1.AppendText("\n### " + DateTime.Now.ToUniversalTime() + "\n" + exc.StackTrace);
                         MessageBox.Show("Некорректный ввод: " + arrayItem);
                         return;
                     }

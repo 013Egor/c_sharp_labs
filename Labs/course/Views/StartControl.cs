@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using Labs.Lab2_BattleShip.Domain;
 using Labs.Lab2_BattleShip.Model;
 using Newtonsoft.Json;
+using Labs.Lab_4;
 
 namespace Labs.Lab2_BattleShip.Views
 {
@@ -21,14 +22,11 @@ namespace Labs.Lab2_BattleShip.Views
                 return;
 
             this.game = game;
-            comboBox2.Text = "Легко";
-            startButton.Click += StartButton_Click;
         }
 
         private void StartButton_Click(object sender, EventArgs e)
         {
-            game.level = comboBox2.Text == "Сложно";
-            game.Start("Human", "AI");
+            game.chooseDifficult();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -39,9 +37,22 @@ namespace Labs.Lab2_BattleShip.Views
                 return;
             }
             string filename = openFileDialog1.FileName;
+            if (Class1.FindFile(filename).Count != 1)
+            {
+                MessageBox.Show("Wrong input file");
+                return;
+            }
+            string logFileName = filename.Replace("savedGame_", "");
+            if (!System.IO.File.Exists(logFileName))
+            {
+                MessageBox.Show("Cannot find log file. Please, create new game");
+                return;
+            }
+
             string fileText = System.IO.File.ReadAllText(filename);
+            string logFileText = System.IO.File.ReadAllText(logFileName);
             GameDTO gameDto = JsonConvert.DeserializeObject<GameDTO>(fileText);
-            game.Continue(gameDto.GetGame());
+            game.Continue(gameDto.GetGame(), logFileText);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 using Labs.Lab2_BattleShip.Domain;
 
 namespace Labs.Lab2_BattleShip.Views
@@ -10,7 +11,6 @@ namespace Labs.Lab2_BattleShip.Views
         public MainForm()
         {
             InitializeComponent();
-
             game = new Game();
             game.StageChanged += Game_OnStageChanged;
 
@@ -21,6 +21,9 @@ namespace Labs.Lab2_BattleShip.Views
         {
             switch (stage)
             {
+                case GameStage.DifficultySelection:
+                    ShowDifficultySelection();
+                    break;
                 case GameStage.ArrangingShips:
                     ShowArrangingShipsScreen();
                     break;
@@ -43,6 +46,12 @@ namespace Labs.Lab2_BattleShip.Views
             startControl.Configure(game);
             startControl.Show();
         }
+        private void ShowDifficultySelection()
+        {
+            HideScreens();
+            difficultySelection.Configure(game);
+            difficultySelection.Show();
+        }
 
         private void ShowArrangingShipsScreen()
         {
@@ -60,6 +69,8 @@ namespace Labs.Lab2_BattleShip.Views
 
         private void ShowFinishedScreen()
         {
+            string filename = "game_log_" + DateTime.Now.ToShortDateString() + "T" + DateTime.Now.Hour + "_" + DateTime.Now.Minute + "_" + DateTime.Now.Second + ".txt";
+            System.IO.File.WriteAllText(filename, game.battleLog);
             HideScreens();
             finishedControl.Configure(game);
             finishedControl.Show();
@@ -68,6 +79,7 @@ namespace Labs.Lab2_BattleShip.Views
         private void HideScreens()
         {
             startControl.Hide();
+            difficultySelection.Hide();
             arrangingControl.Hide();
             battleControl.Hide();
             finishedControl.Hide();

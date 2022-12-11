@@ -3,8 +3,9 @@
     public enum GameStage
     {
         NotStarted = 0,
-        ArrangingShips = 1,
-        Battle = 2,
-        Finished = 3
+        DifficultySelection = 1,
+        ArrangingShips = 2,
+        Battle = 3,
+        Finished = 4
     }
 }

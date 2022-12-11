@@ -13,6 +13,10 @@
 
         IField IPlayer.Field => Field;
 
+        public void clearField()
+        {
+            Field.clearField();
+        }
         public override string ToString() => $"Player {Name}";
     }
 }

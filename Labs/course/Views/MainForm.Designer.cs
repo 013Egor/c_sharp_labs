@@ -19,6 +19,7 @@ namespace Labs.Lab2_BattleShip.Views
 
         private void InitializeComponent()
         {
+            this.difficultySelection = new Labs.Lab2_BattleShip.Views.DifficultySelection();
             this.arrangingControl = new Labs.Lab2_BattleShip.Views.ArrangingControl();
             this.battleControl = new Labs.Lab2_BattleShip.Views.BattleControl();
             this.startControl = new Labs.Lab2_BattleShip.Views.StartControl();
@@ -49,6 +50,14 @@ namespace Labs.Lab2_BattleShip.Views
             this.startControl.Size = new System.Drawing.Size(800, 600);
             this.startControl.TabIndex = 2;
             // 
+            // difficultySelection
+            // 
+            this.difficultySelection.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.difficultySelection.Location = new System.Drawing.Point(0, 0);
+            this.difficultySelection.Name = "difficultySelection";
+            this.difficultySelection.Size = new System.Drawing.Size(800, 600);
+            this.difficultySelection.TabIndex = 4;
+            // 
             // finishedControl
             // 
             this.finishedControl.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -64,6 +73,7 @@ namespace Labs.Lab2_BattleShip.Views
             this.ClientSize = new System.Drawing.Size(800, 600);
             this.Controls.Add(this.finishedControl);
             this.Controls.Add(this.startControl);
+            this.Controls.Add(this.difficultySelection);
             this.Controls.Add(this.arrangingControl);
             this.Controls.Add(this.battleControl);
             this.MaximumSize = new System.Drawing.Size(816, 639);
@@ -76,6 +86,7 @@ namespace Labs.Lab2_BattleShip.Views
 
         #endregion
 
+        private DifficultySelection difficultySelection;
         private BattleControl battleControl;
         private ArrangingControl arrangingControl;
         private StartControl startControl;

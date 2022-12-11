@@ -82,5 +82,13 @@ namespace Labs.Lab2_BattleShip.Views
                     MessageBox.Show("Не удалось разместить корабли AI, попробуйте еще раз", "Сообщение", MessageBoxButtons.OK);
             }
         }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            fieldControl.SetSelectedShip(null);
+            game.firstPlayer.clearField();
+            game.secondPlayer.clearField();
+            game.goDifficultSelection();
+        }
     }
 }

@@ -17,7 +17,6 @@ namespace Labs.Lab2_BattleShip.Views
         {
             if (this.game != null)
                 return;
-
             this.game = game;
 
             humanFieldControl.Configure(game.FirstPlayer.Field, false);
@@ -33,6 +32,14 @@ namespace Labs.Lab2_BattleShip.Views
                 winnerLabel.BackColor = Color.Red;
                 winnerLabel.Text = "Победил Компуктер!!!";
             }
+        }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            game.firstPlayer.clearField();
+            game.secondPlayer.clearField();
+
+            game.goStartScreen();
         }
     }
 }

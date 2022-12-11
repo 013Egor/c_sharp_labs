@@ -28,8 +28,8 @@ namespace Labs.Lab2_BattleShip.Views
 
         public void Configure(IField field, bool fogOfWar)
         {
-            if (configured)
-                throw new InvalidOperationException();
+            if (this.configured)
+                return;
 
             this.field = field;
             this.field.Updated += () => Invalidate();

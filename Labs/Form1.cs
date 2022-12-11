@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Labs.Lab2_BattleShip.Views;
 using Labs.Lab_4;
+using Labs.course;
 
 namespace Labs
 {
@@ -20,7 +21,7 @@ namespace Labs
         } 
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            Lab_2 lab_2 = new Lab_2();
+            Lab_2 lab_2 = new Lab_2(this);
             lab_2.Show();
         }
 
@@ -86,6 +87,12 @@ namespace Labs
         {
             Lab4 lab4 = new Lab4(this);
             lab4.Show();
+        }
+
+        private void доп2ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            dop_2 dop = new dop_2(this);
+            dop.Show();
         }
     }
 }

@@ -21,7 +21,6 @@ namespace Labs.Lab2_BattleShip.Views
         {
             if (this.game != null)
                 return;
-
             this.game = game;
 
             humanFieldControl.Configure(game.FirstPlayer.Field, false);
@@ -47,17 +46,14 @@ namespace Labs.Lab2_BattleShip.Views
             var aiPlayer = game.SecondPlayer;
             if (game.Stage == GameStage.Battle && game.CurrentPlayer.Equals(aiPlayer))
             {
-                Console.WriteLine(game.level);
                 Point shot;
                 if (game.level)
                 {
                     shot = humanPlayer.Field.GenerateShot();
-                    Console.WriteLine(shot.X + " " + shot.Y);
                 }
                 else
                 {
                     shot = humanPlayer.Field.GenerateRandomShot();
-                    Console.WriteLine(shot.X + " " + shot.Y);
                 }
 
                 game.ShootTo(shot);
@@ -71,7 +67,17 @@ namespace Labs.Lab2_BattleShip.Views
             game.secondPlayer.Field.GetShotsList();
             game.secondPlayer.Field.GetShipsList();
             string jsonString = JsonConvert.SerializeObject(new GameDTO(game));
-            System.IO.File.WriteAllText("savedGame.txt", jsonString);
+            string filename = "game_log_" + DateTime.Now.ToShortDateString() + "T" + DateTime.Now.Hour + "_" + DateTime.Now.Minute + "_" + DateTime.Now.Second + ".txt";
+            System.IO.File.WriteAllText("savedGame_" + filename, jsonString);
+            System.IO.File.WriteAllText(filename, game.battleLog);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            game.firstPlayer.clearField();
+            game.secondPlayer.clearField();
+
+            game.goStartScreen();
         }
     }
 }

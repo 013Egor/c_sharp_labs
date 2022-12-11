@@ -1,4 +1,4 @@
-﻿
+﻿using System.Collections.Generic;
 using System;
 using System.Linq;
 
@@ -6,6 +6,7 @@ namespace Labs.Lab2_BattleShip.Domain
 {
     public class Game
     {
+        public string battleLog = "";
         public GameStage stage = GameStage.NotStarted;
         public Player firstPlayer = null;
         public Player secondPlayer = null;
@@ -37,8 +38,26 @@ namespace Labs.Lab2_BattleShip.Domain
 
         public event Action ReadyToShoot;
 
+        public void chooseDifficult()
+        {
+            ChangeStage(GameStage.DifficultySelection);
+        }
+
+        public void goStartScreen()
+        {
+            ChangeStage(GameStage.NotStarted);
+        }
+        public void goDifficultSelection()
+        {
+            ChangeStage(GameStage.DifficultySelection);
+        }
         public void Start(string firstPlayerName, string secondPlayerName)
         {
+            if (firstPlayer != null && secondPlayer != null)
+            {
+                ChangeStage(GameStage.ArrangingShips);
+                return;
+            }
             firstPlayer = CreatePlayer(firstPlayerName);
             secondPlayer = CreatePlayer(secondPlayerName);
             isFirstPlayerCurrent = true;
@@ -46,12 +65,12 @@ namespace Labs.Lab2_BattleShip.Domain
             ChangeStage(GameStage.ArrangingShips);
         }
 
-        public void Continue(Game game)
+        public void Continue(Game game, string log)
         {
             firstPlayer = game.firstPlayer;
             secondPlayer = game.secondPlayer;
             isFirstPlayerCurrent = game.isFirstPlayerCurrent;
-
+            battleLog = log;
             isFirstPlayerCurrent = true;
             CurrentPlayerChanged?.Invoke(CurrentPlayer);
             ChangeStage(GameStage.Battle);
@@ -85,15 +104,18 @@ namespace Labs.Lab2_BattleShip.Domain
                 throw new InvalidOperationException();
 
             var shotResult = GetNextPlayer().Field.ShootTo(point);
+            battleLog += CurrentPlayer.Name + " shoots to " + point.X + " " + point.Y;
             switch (shotResult)
             {
                 case ShotResult.Hit:
+                    battleLog += " result: Hit\n";
                     if (IsCurrentPlayerWin())
                         ChangeStage(GameStage.Finished);
                     else
                         ReadyToShoot?.Invoke();
                     return;
                 case ShotResult.Miss:
+                    battleLog += " result: Miss\n";
                     MoveToNextPlayer();
                     ReadyToShoot?.Invoke();
                     return;
@@ -128,7 +150,9 @@ namespace Labs.Lab2_BattleShip.Domain
 
         private static bool IsReadyForBattle(IPlayer player)
         {
-            return player.Field.GetShipToPutOrNull() == null && !player.Field.GetConflictingPoints().Any();
+            IShip tempShip = player.Field.GetShipToPutOrNull();
+            ISet<Point>temp = player.Field.GetConflictingPoints();
+            return tempShip == null && !temp.Any();
         }
 
         private bool IsCurrentPlayerWin()

@@ -22,9 +22,22 @@ namespace Labs.Lab_4
                 return null;
             }
         }
-        public static MatchCollection Date(string s)
+        public static MatchCollection Find2(string s, string signature)
         {
-            Regex regex = new Regex(@"(0?[1-9]|[12][0-9]|3[01])[.](0?[1-9]|1[012])[.]\d{4}");
+            Regex regex = new Regex(@"\Wma\w*");
+            if (s != null)
+            {
+                MatchCollection matches = regex.Matches(s);
+                return matches;
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public static MatchCollection FindFile(string s)
+        {
+            Regex regex = new Regex(@"savedGame_\w*");
             if (s != null)
             {
                 MatchCollection matches = regex.Matches(s);

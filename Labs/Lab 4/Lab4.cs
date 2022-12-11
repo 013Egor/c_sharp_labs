@@ -128,23 +128,11 @@ namespace Labs.Lab_4
         }
 
         private void button5_Click(object sender, EventArgs e)
-        {
-            DateTime startDate = DateTime.Parse("27-11-2022");
-
-            DateTime endDate = DateTime.Parse("30-11-2022"); 
-            s = richTextBox1.Text;
-            MatchCollection matches = Class1.Date(s);
+        {            s = richTextBox1.Text;
+            MatchCollection matches = Class1.Find2(s, "ma");
             foreach (Match match in matches)
             {
-                DateTime dateTime = DateTime.Parse(match.Value.Replace(".", "-"));
-                if (dateTime > startDate && dateTime < endDate)
-                {
-                    SetSelectionStyle(match.Index, match.Length, FontStyle.Regular);
-                    String extraText = "\\egor";
-                    richTextBox1.Select(match.Index + match.Length, 1);
-                    richTextBox1.SelectedText = extraText;
-                    SetSelectionStyle(match.Index + (extraText.Length - 1), extraText.Length - 1, FontStyle.Regular);
-                }
+                SetSelectionStyle(match.Index, match.Length, FontStyle.Regular);
             }
         }
     }
