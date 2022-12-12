@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace Labs.Lab2_BattleShip.Domain
 {
@@ -16,7 +17,7 @@ namespace Labs.Lab2_BattleShip.Domain
 
         public void clearField()
         {
-            foreach (Ship ship in ships)
+            foreach (Ship ship in this.ships)
             {
                 ship.Direction = Direction.Horizontal;
                 ship.Position = null;

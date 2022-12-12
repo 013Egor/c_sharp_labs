@@ -4,6 +4,7 @@ using Labs.Lab2_BattleShip.Domain;
 using Labs.Lab2_BattleShip.Model;
 using Newtonsoft.Json;
 using Labs.Lab_4;
+using System.Text.RegularExpressions;
 
 namespace Labs.Lab2_BattleShip.Views
 {
@@ -37,22 +38,35 @@ namespace Labs.Lab2_BattleShip.Views
                 return;
             }
             string filename = openFileDialog1.FileName;
-            if (Class1.FindFile(filename).Count != 1)
+            MatchCollection matchCollection = Class1.FindFile(filename);
+            if (matchCollection.Count != 1)
             {
-                MessageBox.Show("Wrong input file");
+                MessageBox.Show("Файл сохраненной игры был поврежден.");
                 return;
             }
-            string logFileName = filename.Replace("savedGame_", "");
+            string logFileName = filename.Remove(0, matchCollection[0].Index + 12);
+            
             if (!System.IO.File.Exists(logFileName))
             {
-                MessageBox.Show("Cannot find log file. Please, create new game");
+                MessageBox.Show("Не могу найти лог-файл. Пожалуйста, создайте новую игру.");
                 return;
             }
 
             string fileText = System.IO.File.ReadAllText(filename);
             string logFileText = System.IO.File.ReadAllText(logFileName);
-            GameDTO gameDto = JsonConvert.DeserializeObject<GameDTO>(fileText);
-            game.Continue(gameDto.GetGame(), logFileText);
+            try
+            {
+                if (fileText.Contains("\n") || fileText.Contains(" "))
+                {
+                    throw new Exception();
+                }
+                GameDTO gameDto = JsonConvert.DeserializeObject<GameDTO>(fileText);
+                game.Continue(gameDto.GetGame(), logFileText);
+            } catch (Exception exc)
+            {
+                MessageBox.Show("Файл был поврежден. Загрузка созраненной игры из данного файла невозможна.");
+            }
+           
         }
     }
 }

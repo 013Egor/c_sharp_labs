@@ -15,7 +15,7 @@
 
         public void clearField()
         {
-            Field.clearField();
+             Field.clearField();
         }
         public override string ToString() => $"Player {Name}";
     }
