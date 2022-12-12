@@ -37,7 +37,7 @@ namespace Labs.Lab_4
         }
         public static MatchCollection FindFile(string s)
         {
-            Regex regex = new Regex(@"savedGame_\w*");
+            Regex regex = new Regex(@"\w_savedGame_\w*");
             if (s != null)
             {
                 MatchCollection matches = regex.Matches(s);

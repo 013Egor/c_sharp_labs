@@ -31,14 +31,14 @@ namespace Labs.course
                 }
                 foreach (char item in message)
                 {
-                    if (item < 'а' || item > 'я')
+                    if (item < 'a' || item > 'z')
                     {
                         throw new Exception("Ошибка в сообщении: символ " + item + "");
                     }
                 }
                 foreach (char item in key)
                 {
-                    if (item < 'а' || item > 'я')
+                    if (item < 'a' || item > 'z')
                     {
                         throw new Exception("Ключ: символ " + item + "");
                     }
@@ -60,8 +60,8 @@ namespace Labs.course
                 id = id % initialKeySize;
             }
             MessageBox.Show("Сообщение: " + message + "\nКлюч: " + key);
-            int aLetter = 'а';
-            int mod = 'я';
+            int aLetter = 'a';
+            int mod = 'z';
             string code = "";
             for (int i = 0; i < message.Length; i++)
             {

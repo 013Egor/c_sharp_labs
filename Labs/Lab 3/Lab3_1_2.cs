@@ -99,5 +99,11 @@ namespace Labs
         {
             await salfetka(panel3.Width / 2, panel3.Height * 0.25, 500, (int)numericUpDown3.Value);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            
+            myPen.Width = (int) numericUpDown1.Value;
+        }
     }
 }
