@@ -68,10 +68,7 @@ namespace Labs.Lab2_BattleShip.Views
             }
         }
 
-        private void button1_Click(object sender, System.EventArgs e)
-        {
-            panel1.Height = 155;
-        }
+        
         private string getFilename()
         {
             saveFileDialog1.Filter = "Text files(*.txt)|*.txt|All files(*.*)|*.*";
@@ -110,6 +107,11 @@ namespace Labs.Lab2_BattleShip.Views
             {
                 panel1.Height = 54;
             }
+        }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            panel1.Height = 155;
         }
 
         private void button4_Click(object sender, EventArgs e)

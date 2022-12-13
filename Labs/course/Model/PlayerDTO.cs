@@ -22,6 +22,15 @@ namespace Labs.Lab2_BattleShip.Model
         public string Name { get; set; }
         public FieldDTO Field { get; set; }
 
+        public LinkedList<Ship> getSavedShips()
+        {
+            return Field.getSavedShips();
+        }
+
+        public LinkedList<Point> getSavedShots()
+        {
+            return Field.getSavedShots();
+        }
         public Player GetPlayer()
         {
             return new Player(Name, Field.GetField());

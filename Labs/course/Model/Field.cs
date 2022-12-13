@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Labs.Lab2_BattleShip.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,8 +8,8 @@ namespace Labs.Lab2_BattleShip.Domain
 {
     public class Field : IField
     {
-        private readonly HashSet<Ship> ships = new HashSet<Ship>();
-        private readonly HashSet<Point> shots = new HashSet<Point>();
+        private HashSet<Ship> ships = new HashSet<Ship>();
+        private HashSet<Point> shots = new HashSet<Point>();
 
         public List<Ship> savedShips = new List<Ship>();
         public List<Point> savedShots = new List<Point>();
@@ -26,6 +27,12 @@ namespace Labs.Lab2_BattleShip.Domain
             this.savedShips.Clear();
             this.savedShots.Clear();
             this.currentShip = null;
+        }
+
+        public void setField(LinkedList<Ship> newShips, LinkedList<Point> newShots)
+        {
+            ships = newShips.ToHashSet();
+            shots = newShots.ToHashSet();
         }
         public Field(int width, int height)
         {

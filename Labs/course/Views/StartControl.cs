@@ -61,7 +61,7 @@ namespace Labs.Lab2_BattleShip.Views
                     throw new Exception();
                 }
                 GameDTO gameDto = JsonConvert.DeserializeObject<GameDTO>(fileText);
-                game.Continue(gameDto.GetGame(), logFileText);
+                game.Continue(fileText, logFileText);
             } catch (Exception exc)
             {
                 MessageBox.Show("Файл был поврежден. Загрузка созраненной игры из данного файла невозможна.");

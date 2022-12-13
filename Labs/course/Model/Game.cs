@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System;
 using System.Linq;
+using Labs.Lab2_BattleShip.Model;
+using Newtonsoft.Json;
 
 namespace Labs.Lab2_BattleShip.Domain
 {
@@ -65,13 +67,13 @@ namespace Labs.Lab2_BattleShip.Domain
             ChangeStage(GameStage.ArrangingShips);
         }
 
-        public void Continue(Game game, string log)
+        public void Continue(string gameJson, string log)
         {
-            firstPlayer = game.firstPlayer;
-            secondPlayer = game.secondPlayer;
-            isFirstPlayerCurrent = game.isFirstPlayerCurrent;
+            GameDTO gameDto = JsonConvert.DeserializeObject<GameDTO>(gameJson);
+            firstPlayer.setField(gameDto.firstPlayer.getSavedShips(), gameDto.firstPlayer.getSavedShots());
+            secondPlayer.setField(gameDto.secondPlayer.getSavedShips(), gameDto.secondPlayer.getSavedShots());
+            isFirstPlayerCurrent = gameDto.isFirstPlayerCurrent;
             battleLog = log;
-            isFirstPlayerCurrent = true;
             CurrentPlayerChanged?.Invoke(CurrentPlayer);
             ChangeStage(GameStage.Battle);
         }
